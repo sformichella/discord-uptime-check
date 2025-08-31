@@ -3,12 +3,12 @@ import { Client } from "discord.js";
 
 import { createMessage, getVpsStatus } from "../controllers";
 
-import { AppArgs, AppEvents, IApp } from "./types";
+import { AppArgs, AppEvents } from "./types";
 import { getUptimeCheckMessage } from "./utils";
 
 const TEN_MINUTES = 1000 * 60 * 10
 
-class App extends EventEmitter<AppEvents> implements IApp {
+class App extends EventEmitter<AppEvents> {
   discordClient: Client;
   initialized: boolean;
   lastMessage?: { sentAt: number; status: 'failure' | 'success' } | undefined;
