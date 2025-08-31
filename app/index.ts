@@ -43,6 +43,11 @@ class App extends EventEmitter<AppEvents> implements IApp {
       })
 
       if (message) {
+        this.lastMessage = {
+          sentAt: Date.now(),
+          status,
+        }
+
         await createMessage({
           discordClient,
           guildId: discordGuildId,

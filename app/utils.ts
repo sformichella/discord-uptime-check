@@ -21,6 +21,8 @@ const getUptimeCheckMessage = (args: GetUptimeCheckMessageArgs) => {
 
       if (now - previousMessage.sentAt > repeatFailureMessageInterval) {
         return 'Uptime check is still failing.'
+      } else {
+        return
       }
     } else {
       return
